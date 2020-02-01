@@ -1,0 +1,16 @@
+<% include ../partials/header %>
+
+<form method="POST" action="/designation">
+    <div class="form-group">
+      <label for="designation_id">Designation Id</label>
+      <input type="text" class="form-control" id="designation_id" placeholder="Designation Id" name="designation_id">
+    </div>
+    <div class="form-group">
+      <label for="designation_name">Designation Name</label>
+      <input type="text" class="form-control" id="designation_name" placeholder="Designation Name" name="designation_name">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <% include ../partials/footer %>

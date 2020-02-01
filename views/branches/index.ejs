@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+
+<form method="POST" action="/branch">
+    <div class="form-group">
+      <label for="ibranch_id">Branch Id</label>
+      <input type="text" class="form-control" id="ibranch_id" placeholder="Branch ID" name="branch_id">
+    </div>
+    <div class="form-group">
+      <label for="ibranch_name">Branch Name</label>
+      <input type="text" class="form-control" id="ibranch_name" placeholder="Branch Name" name="branch_name">
+    </div>
+    <div class="form-group">
+      <label for="ibranch_location">Branch Locations</label>
+      <input type="text" class="form-control" id="ibranch_location" placeholder="Enter branch_location here" name="branch_location">
+    </div>
+    <div class="form-group">
+      <label for="type">Company Name</label>
+      <select class="form-control" id="branchCompanySelect" name="branchCompanySelect">
+
+
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <% include ../partials/footer %>

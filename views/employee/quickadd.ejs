@@ -1,0 +1,87 @@
+<% include ../partials/header %>
+
+<form method="POST" action="/employee/quickadd">
+  <h5>Quick Add Employee.</h5>
+    <div class="form-group">
+      <label for="salutation">Salutation</label>
+      <select class="form-control" id="salutationSelect" name="salutationSelect">
+        <option>Mrs.</option>
+        <option>Ms.</option>
+        <option>Mr.</option>
+
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="first_name">First Name</label>
+      <input type="text" class="form-control" id="first_name" placeholder="First Name" name="first_name">
+    </div>
+    <div class="form-group">
+      <label for="middle_name">Middle Name</label>
+      <input type="text" class="form-control" id="middle_name" placeholder="Middle Name" name="middle_name">
+    </div>
+    <div class="form-group">
+      <label for="last_name">Last Name</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+    </div>
+    <div class="form-group">
+      <label for="suffix">Suffix</label>
+      <input type="text" class="form-control" id="suffix" placeholder="Suffix" name="suffix">
+    </div>
+
+    <div class="form-group">
+      <label for="type">Company Name</label>
+      <select class="form-control" id="companySelect" name="companySelect">
+
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="branch">Branch</label>
+      <select class="form-control" id="branchSelect" name="branchSelect">
+  
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="employee_code">Employee Code</label>
+      <input type="text" class="form-control" id="employee_code" placeholder="Employee Code" name="employee_code">
+    </div>
+
+    <div class="form-group">
+      <label for="work_email">Email Address</label>
+      <input type="email" class="form-control" id="email" placeholder="Email Address" name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="work_email">Mobile Number</label>
+      <input type="text" class="form-control" id="mobile" placeholder="Mobile" name="mobile">
+    </div>
+
+    <div class="form-group">
+      <label for="type">Enrollment Type</label>
+      <select class="form-control" id="typeSelect" name="typeSelect">
+        <option>Permenant</option>
+        <option>Temporary</option>
+        <option>Contract</option>
+
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="date_of_joining">Date Of Joining</label>
+      <input type="date" class="form-control" id="date_of_joining" name="date_of_joining">
+    </div>
+
+    <div class="form-group">
+      <label for="probation_till">On Probation Till</label>
+      <input type="date" class="form-control" id="probation_till" name="probation_till">
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+   <% include ../partials/footer %>

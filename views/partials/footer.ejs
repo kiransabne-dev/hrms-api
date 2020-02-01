@@ -1,0 +1,82 @@
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.1/typed.min.js"></script>
+
+	<script>
+	
+	$(document).ready(function(){
+	//getting company name in add quick employee form
+	$.ajax({
+    url: '/company',
+    type:'GET',
+    data: {
+
+	},
+    dataType: 'json',
+    success: function(response) {
+		console.log(response.data)
+		let resultSets = response.data
+		var ajaxData= "<option value>--Select Company--</option>"
+
+		for (let company of resultSets){
+			console.log(company.business_name)
+
+			ajaxData += "<option value='"+company.business_id+"'>"+company.business_name+"</option>"
+			
+		}
+
+		$('#companySelect').html(ajaxData)
+		$('#branchCompanySelect').html(ajaxData)
+
+    },
+    error: function(xhr) {
+    //Do Something to handle error
+    }
+	});
+
+	
+	
+		//getting branch name in add quick employee form for the selected company
+	$('#companySelect').change(function(e){
+		e.preventDefault()
+		$.ajax({
+		url: '/branch/getBranch',
+		type:'POST',
+		data: {
+			business_id: ($('#companySelect').val())
+		},
+		dataType: 'json',
+		success: function(response) {
+			console.log(response.data)
+			let resultSets = response.data
+			var ajaxData= "<option value>--Select Branch--</option>"
+
+			for (let company of resultSets){
+				console.log(company.branch_id)
+
+				ajaxData += "<option value='"+company.branch_id+"'>"+company.branch_name+"</option>"
+				
+			}
+
+			$('#branchSelect').html(ajaxData)
+		
+
+		},
+		error: function(xhr) {
+		//Do Something to handle error
+		}
+		});
+
+	})
+
+	});
+	</script> 
+  
+
+
+</body>
+
+</html>
